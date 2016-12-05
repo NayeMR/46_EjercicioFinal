@@ -1,5 +1,4 @@
 $(document).ready( function(){
-
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 	$('.js-back').hide();
@@ -18,6 +17,14 @@ $(document).ready( function(){
 */
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
+		 for(var i = 0; i < recipesArray.length; i++)
+		{
+			if(recipesArray[i].highlighted== true){
+				//console.log('elemento que lo tiene es: '+ i);
+				renderRecipe(i);
+			}
+		}
+		
 }
 
 /*
