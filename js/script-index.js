@@ -3,8 +3,13 @@ $(document).ready( function(){
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 	$('.js-back').hide();
+	printNews();
 
 });
+/*Funcion para agregar parrafo*/
+ function  printNews(event){
+ 	$('#parrafoCallout').text('"NUEVAS RECETAS"');
+ }
 
 
 /*
