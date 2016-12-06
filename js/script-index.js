@@ -3,6 +3,7 @@ $(document).ready( function(){
 	renderHighlightedRecipes(recipesArray);
 	$('.js-back').hide();
 	printNews();
+	renderActivities(activitiesArray)
 	
 
 });
@@ -65,7 +66,11 @@ function renderRecipe(recipe) {
 * Función que se encarga de pintar todas las actividades
 */
 function renderActivities(activitiesArray) {
-	console.log('Activities: ', activitiesArray);
+	console.log('activities: ', activitiesArray);
+	if(activitiesArray.length > 0){
+		$('.wrapper-message').hide();
+		
+	}
 }
 /*
 * Función que se encarga de pintar una actividad
