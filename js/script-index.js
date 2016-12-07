@@ -88,7 +88,7 @@ function renderActivity(recipe) {
         "<img src='<%=userAvatar%>' class='image-avatar'>"+
         "</span>" +
         "<span class='meta'>" +
-        "<span class='author'><%=userName%></span> made " +
+        "<span class='author'><%=userName%></span> " +
         "<span class='recipe'><%=recipeName%></span>: <%=text%>" +
         "<span class='location'>&mdash;<%=place%></span>" +
         "</span>" +
@@ -97,10 +97,10 @@ function renderActivity(recipe) {
         "</a>";
         var compiled= _.template(template);
 		var elemento = compiled(recipe);
-		console.log("hola" + elemento);
+		//console.log("hola" + elemento);
 
-		var acti = $(elemento);
-		$('.list-activities').append(acti); 
+		var activado = $(elemento);
+		$('.list-activities').append(activado); 
     
 }
 
