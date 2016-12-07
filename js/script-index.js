@@ -4,7 +4,6 @@ $(document).ready( function(){
 	$('.js-back').hide();
 	printNews();
 	renderActivities(activities);
-	//renderActivities(activitiesArray)
 	
 
 });
@@ -68,9 +67,13 @@ function renderRecipe(recipe) {
 */
 function renderActivities(activities) {
 	console.log('activities: ', activities);
-	if(activities.length > 0){
-		$('.wrapper-message').hide();
-	}
+	for(var i = 0; i < activities.length; i++)
+	{
+		if(activities.length > 0){
+			$('.wrapper-message').hide();
+			renderActivity(activities[i]);
+		}
+	};
 }
 /*
 * Función que se encarga de pintar una actividad
@@ -78,6 +81,26 @@ function renderActivities(activities) {
 * archivo "templates/templates-activity.html"
 */
 function renderActivity(recipe) {
+    var template =
+        "<a href='#' class='item-activity'>" +
+        "<span class='attribution'>" +
+        "<span class='avatar'>" +
+        "<img src='<%=userAvatar%>' class='image-avatar'>"+
+        "</span>" +
+        "<span class='meta'>" +
+        "<span class='author'><%=userName%></span> made " +
+        "<span class='recipe'><%=recipeName%></span>: <%=text%>" +
+        "<span class='location'>&mdash;<%=place%></span>" +
+        "</span>" +
+        "</span>" +
+        "<div class='bg-image' style='background-image: url(<%=image%>)'></div>" +
+        "</a>";
+        var compiled= _.template(template);
+		var elemento = compiled(recipe);
+		console.log("hola" + elemento);
+
+		var acti = $(elemento);
+		$('.list-activities').append(acti); 
     
 }
 
