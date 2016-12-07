@@ -4,7 +4,6 @@ $(document).ready( function(){
 	$('.js-back').hide();
 	printNews();
 	renderActivities(activities);
-	
 
 });
 /*Funcion para agregar parrafo*/
